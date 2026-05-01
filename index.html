@@ -241,20 +241,6 @@
     .fiverr-text{color:var(--muted);font-size:0.88rem;line-height:1.7;}
     .fiverr-text strong{color:#1aad55;}
 
-    /* TESTIMONIALS */
-    #testimonials{background:var(--bg);}
-    .tm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
-    .tm-card{background:var(--surface);border:1px solid var(--border);padding:2rem;border-radius:12px;position:relative;box-shadow:0 2px 10px rgba(0,0,0,0.04);transition:border-color 0.3s,transform 0.3s;}
-    .tm-card:hover{border-color:var(--blue);transform:translateY(-3px);}
-    .tm-quote{font-size:2.8rem;color:var(--blue);line-height:1;margin-bottom:0.3rem;opacity:0.55;}
-    .tm-text{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:1.4rem;font-style:italic;}
-    .tm-author{display:flex;align-items:center;gap:0.8rem;}
-    .tm-avatar{width:42px;height:42px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#0f1624;flex-shrink:0;}
-    .tm-name{font-size:0.88rem;font-weight:700;color:var(--text);}
-    .tm-role{font-size:0.7rem;color:var(--muted);font-family:var(--mono);}
-    .tm-badge{position:absolute;top:1rem;right:1rem;font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;background:rgba(26,173,85,0.1);border:1px solid rgba(26,173,85,0.25);color:#1aad55;border-radius:4px;padding:0.2rem 0.55rem;text-transform:uppercase;}
-    .tm-sample-note{text-align:center;margin-top:2rem;font-family:var(--mono);font-size:0.65rem;color:var(--light);font-style:italic;}
-    .stars{color:var(--cyan);font-size:0.85rem;margin-bottom:0.8rem;letter-spacing:2px;}
 
     /* HAMBURGER */
     .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
@@ -278,7 +264,6 @@
       .ab-grid,.ct-grid{grid-template-columns:1fr;}
       section.sec{padding:4rem 5%;}
       .fiverr-banner{flex-direction:column;align-items:flex-start;}
-      .tm-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -293,7 +278,6 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -338,7 +322,6 @@
     <div class="intro-stats">
       <div><div class="is-num">3.85</div><div class="is-lbl">CGPA</div></div>
       <div><div class="is-num">5+</div><div class="is-lbl">Projects</div></div>
-      <div><div class="is-num">10+</div><div class="is-lbl">Clients</div></div>
     </div>
   </div>
 </section>
@@ -357,7 +340,6 @@
       <div class="st-grid">
         <div class="st-box"><div class="st-num">3.85</div><div class="st-lbl">CGPA Sem 1</div></div>
         <div class="st-box"><div class="st-num">5+</div><div class="st-lbl">GitHub Projects</div></div>
-        <div class="st-box"><div class="st-num">10+</div><div class="st-lbl">Fiverr Clients</div></div>
         <div class="st-box"><div class="st-num">AI/ML</div><div class="st-lbl">Career Goal</div></div>
       </div>
     </div>
@@ -388,8 +370,8 @@
     <h2 class="sec-ttl">My <span>Services</span></h2>
     <div class="fiverr-banner">
       <!-- TODO: Replace href with your actual Fiverr profile URL -->
-      <a href="https://www.fiverr.com/alihaider05" target="_blank" rel="noopener" class="fiverr-logo" style="text-decoration:none;">&#9889; Fiverr</a>
-      <p class="fiverr-text">I'm an active freelancer on <strong>Fiverr</strong> — delivering professional software solutions to clients worldwide. <strong>10+ happy clients</strong> and counting. Fast delivery, clear communication, and quality code guaranteed.</p>
+      <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" class="fiverr-logo" style="text-decoration:none;">&#9889; Fiverr</a>
+      <p class="fiverr-text">I'm an active freelancer on <strong>Fiverr</strong> — delivering professional software solutions to clients worldwide. Fast delivery, clear communication, and quality code guaranteed.</p>
     </div>
     <div class="sv-grid">
       <div class="sv-card fade-in">
@@ -427,52 +409,11 @@
     <h2 class="sec-ttl">My <span>Projects</span></h2>
     <div class="pj-grid">
       <div class="pj-card"><div class="pj-num">01 &mdash; Java</div><div class="pj-title">Console Projects</div><p class="pj-desc">Java console apps — Student Management System, Number Guessing Game with difficulty levels and lives system.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Arrays</span></div><a href="https://github.com/Ali-Haider05/MyJavaProject" target="_blank" class="pj-link">GitHub &rarr;</a></div>
-      <div class="pj-card"><div class="pj-num">02 &mdash; Python</div><div class="pj-title">Python SMS Project</div><p class="pj-desc">Final project of Python course — Student Management System with OOP and file handling.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">Python</span><span class="tag">OOP</span><span class="tag">File I/O</span></div><a href="https://github.com/Ali-Haider05" target="_blank" class="pj-link">GitHub &rarr;</a></div>
-      <div class="pj-card"><div class="pj-num">03 &mdash; DLD</div><div class="pj-title">Bridge Car (Robot Car)</div><p class="pj-desc">A robot car that detects water and automatically sprays it — built using Digital Logic Design components and combinational circuits.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">DLD</span><span class="tag">Circuits</span><span class="tag">Hardware</span></div><a href="https://github.com/Ali-Haider05" target="_blank" class="pj-link">GitHub &rarr;</a></div>
+      <div class="pj-card"><div class="pj-num">02 &mdash; Python</div><div class="pj-title">Python SMS Project</div><p class="pj-desc">Final project of Python course — Student Management System with OOP and file handling.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">Python</span><span class="tag">OOP</span><span class="tag">File I/O</span></div><a href="https://github.com/Ali-Haider05/python-sms" target="_blank" class="pj-link">GitHub &rarr;</a></div>
+      <div class="pj-card"><div class="pj-num">03 &mdash; DLD</div><div class="pj-title">Fire Detection &amp; Extinguishing Robot</div><p class="pj-desc">A Fire Detection &amp; Extinguishing Robot that detects fire using LM35 temperature sensor and IR flame sensor, and automatically activates a water pump via relay.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">DLD</span><span class="tag">Circuits</span><span class="tag">Hardware</span></div><a href="https://github.com/Ali-Haider05/DLD-Project" target="_blank" class="pj-link">GitHub &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">04 &mdash; Web</div><div class="pj-title">Portfolio Website</div><p class="pj-desc">Personal portfolio built with HTML/CSS showcasing projects and skills.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div><a href="https://github.com/Ali-Haider05/portfolio" target="_blank" class="pj-link">GitHub &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">05 &mdash; C++</div><div class="pj-title">Console Games</div><p class="pj-desc">Console games built in C++ during 1st semester Programming Fundamentals course.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">C++</span><span class="tag">Console</span><span class="tag">Logic</span></div><a href="https://github.com/Ali-Haider05/c-game" target="_blank" class="pj-link">GitHub &rarr;</a></div>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="sec" id="testimonials">
-  <div class="sec-in">
-    <p class="sec-sub">// client feedback</p>
-    <h2 class="sec-ttl">What Clients <span>Say</span></h2>
-    <div class="tm-grid">
-      <div class="tm-card fade-in">
-        <div class="tm-badge">Fiverr Client</div>
-        <div class="tm-quote">&#8220;</div>
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tm-text">Ali delivered a perfectly structured Java project on time. The code was clean, well-commented, and exactly what I needed. Professional communication throughout the whole process!</p>
-        <div class="tm-author">
-          <div class="tm-avatar">A</div>
-          <div><div class="tm-name">Ahmed K.</div><div class="tm-role">Web Developer &middot; Fiverr</div></div>
-        </div>
-      </div>
-      <div class="tm-card fade-in">
-        <div class="tm-badge">Fiverr Client</div>
-        <div class="tm-quote">&#8220;</div>
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tm-text">Excellent Python automation script! It saved us hours every single week. Ali was very responsive, made revisions quickly, and explained every part of the code clearly.</p>
-        <div class="tm-author">
-          <div class="tm-avatar">S</div>
-          <div><div class="tm-name">Sarah M.</div><div class="tm-role">Startup Founder &middot; Fiverr</div></div>
-        </div>
-      </div>
-      <div class="tm-card fade-in">
-        <div class="tm-badge">Fiverr Client</div>
-        <div class="tm-quote">&#8220;</div>
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="tm-text">Great SQL work and database schema design. Ali understood the requirements immediately and delivered a well-structured ERD and optimized queries. Highly recommended!</p>
-        <div class="tm-author">
-          <div class="tm-avatar">U</div>
-          <div><div class="tm-name">Usman R.</div><div class="tm-role">IT Manager &middot; Fiverr</div></div>
-        </div>
-      </div>
-    </div>
-    <p class="tm-sample-note">&#9432;&nbsp; Sample testimonials shown for illustration — replace with your real Fiverr reviews when ready.</p>
   </div>
 </section>
 
@@ -488,7 +429,7 @@
           <a href="https://github.com/Ali-Haider05" target="_blank" class="ct-item"><span class="ct-ico">&#128025;</span><div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ali-Haider05</div></div></a>
           <a href="mailto:s.haiderali2025@gmail.com" class="ct-item"><span class="ct-ico">&#9993;&#65039;</span><div><div class="ct-lbl">Email</div><div class="ct-val">s.haiderali2025@gmail.com</div></div></a>
           <!-- TODO: Replace with your actual Fiverr profile URL e.g. https://www.fiverr.com/yourUsername -->
-          <a href="https://www.fiverr.com/alihaider05" target="_blank" rel="noopener" class="ct-item" style="border-left:4px solid #1aad55;"><span class="ct-ico">&#9889;</span><div><div class="ct-lbl" style="color:#1aad55;">Fiverr</div><div class="ct-val">Hire me on Fiverr</div></div></a>
+          <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" class="ct-item" style="border-left:4px solid #1aad55;"><span class="ct-ico">&#9889;</span><div><div class="ct-lbl" style="color:#1aad55;">Fiverr</div><div class="ct-val">Hire me on Fiverr</div></div></a>
           <div class="ct-item"><span class="ct-ico">&#128205;</span><div><div class="ct-lbl">Location</div><div class="ct-val">Wah Cantt, Rawalpindi, Pakistan</div></div></div>
         </div>
       </div>
@@ -516,7 +457,7 @@
 </section>
 
 <!-- TODO: Replace Fiverr URLs below with your actual Fiverr profile URL -->
-<footer>Designed &amp; Built by <strong style="color:var(--blue)">Syed Ali Haider</strong> &copy; 2026 &nbsp;&middot;&nbsp; Available for freelance work &mdash; <a href="https://www.fiverr.com/alihaider05" target="_blank" rel="noopener" style="color:#1aad55;text-decoration:none;">Hire me on Fiverr</a></footer>
+<footer>Designed &amp; Built by <strong style="color:var(--blue)">Syed Ali Haider</strong> &copy; 2026 &nbsp;&middot;&nbsp; Available for freelance work &mdash; <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" style="color:#1aad55;text-decoration:none;">Hire me on Fiverr</a></footer>
 
 <script>
   /* Mobile nav toggle */
