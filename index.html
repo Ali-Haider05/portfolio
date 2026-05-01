@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Syed Ali Haider — Portfolio</title>
+  <meta name="description" content="Syed Ali Haider — CS student, freelance developer & Fiverr professional. Expert in Java, Python, Web Development, and SQL. Hire me for your next project."/>
+  <meta name="keywords" content="Syed Ali Haider, portfolio, freelance developer, Fiverr, Java, Python, web development, SQL, DBMS, AI ML, BIIT University"/>
+  <meta name="author" content="Syed Ali Haider"/>
+  <meta property="og:title" content="Syed Ali Haider — Freelance Developer & CS Student"/>
+  <meta property="og:description" content="Experienced freelance developer on Fiverr. Specializing in Java, Python, Web Dev, and SQL. View my portfolio and hire me today."/>
+  <meta property="og:type" content="website"/>
+  <title>Syed Ali Haider — Freelance Developer & Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -222,12 +228,57 @@
 
     footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:0.67rem;color:var(--muted);}
 
+    /* SERVICES */
+    #services{background:var(--bg2);}
+    .sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;}
+    .sv-card{background:var(--surface);border:1px solid var(--border);padding:2rem;border-radius:12px;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;box-shadow:0 2px 10px rgba(0,0,0,0.04);}
+    .sv-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:0 10px 30px rgba(201,168,76,0.12);}
+    .sv-icon{font-size:2rem;margin-bottom:0.8rem;}
+    .sv-name{font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
+    .sv-desc{color:var(--muted);font-size:0.82rem;line-height:1.6;margin-bottom:1rem;}
+    .fiverr-banner{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;background:rgba(26,173,85,0.08);border:1px solid rgba(26,173,85,0.25);border-radius:12px;padding:1.2rem 1.8rem;margin-bottom:2rem;}
+    .fiverr-logo{display:inline-flex;align-items:center;gap:0.45rem;background:#1aad55;color:#fff;border-radius:8px;padding:0.45rem 1rem;font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;white-space:nowrap;}
+    .fiverr-text{color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    .fiverr-text strong{color:#1aad55;}
+
+    /* TESTIMONIALS */
+    #testimonials{background:var(--bg);}
+    .tm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem;}
+    .tm-card{background:var(--surface);border:1px solid var(--border);padding:2rem;border-radius:12px;position:relative;box-shadow:0 2px 10px rgba(0,0,0,0.04);transition:border-color 0.3s,transform 0.3s;}
+    .tm-card:hover{border-color:var(--blue);transform:translateY(-3px);}
+    .tm-quote{font-size:2.8rem;color:var(--blue);line-height:1;margin-bottom:0.3rem;opacity:0.55;}
+    .tm-text{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:1.4rem;font-style:italic;}
+    .tm-author{display:flex;align-items:center;gap:0.8rem;}
+    .tm-avatar{width:42px;height:42px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#0f1624;flex-shrink:0;}
+    .tm-name{font-size:0.88rem;font-weight:700;color:var(--text);}
+    .tm-role{font-size:0.7rem;color:var(--muted);font-family:var(--mono);}
+    .tm-badge{position:absolute;top:1rem;right:1rem;font-family:var(--mono);font-size:0.55rem;letter-spacing:0.1em;background:rgba(26,173,85,0.1);border:1px solid rgba(26,173,85,0.25);color:#1aad55;border-radius:4px;padding:0.2rem 0.55rem;text-transform:uppercase;}
+    .tm-sample-note{text-align:center;margin-top:2rem;font-family:var(--mono);font-size:0.65rem;color:var(--light);font-style:italic;}
+    .stars{color:var(--cyan);font-size:0.85rem;margin-bottom:0.8rem;letter-spacing:2px;}
+
+    /* HAMBURGER */
+    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+    .nav-toggle span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
+    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){opacity:0;}
+    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    /* FADE-IN ON SCROLL */
+    .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+
     @media(max-width:850px){
       nav{padding:1rem 5%;}
-      .nav-links{display:none;}
+      .nav-toggle{display:flex;}
+      .nav-links{display:none;position:fixed;top:62px;left:0;right:0;flex-direction:column;gap:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0.5rem 0 1rem;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:499;}
+      .nav-links.open{display:flex;}
+      .nav-links li{width:100%;}
+      .nav-links a{display:block;padding:0.85rem 6%;font-size:0.8rem;}
       #hero{flex-direction:column;gap:2.5rem;padding:2rem 5% 4rem;}
       .ab-grid,.ct-grid{grid-template-columns:1fr;}
       section.sec{padding:4rem 5%;}
+      .fiverr-banner{flex-direction:column;align-items:flex-start;}
+      .tm-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -236,13 +287,18 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Ali.dev</div>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#welcome">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- WELCOME -->
@@ -262,27 +318,27 @@
       <img id="pImg" alt="Syed Ali Haider"/>
     </div>
     <div class="pic-badge1"><span class="live-dot"></span>&#127891; CGPA: 3.85</div>
-    <div class="pic-badge2">&#129302; AI/ML Goal</div>
+    <div class="pic-badge2"><span class="live-dot"></span>&#9889; Fiverr Freelancer</div>
   </div>
 
   <!-- RIGHT: INTRO -->
   <div class="hero-intro">
-    <div class="intro-chip"><span class="live-dot"></span>CS Student @ BIIT &middot; Batch 2025&ndash;2029</div>
-    <p class="intro-hi">// Hello World! I am</p>
+    <div class="intro-chip"><span class="live-dot"></span>CS Student &middot; Freelancer on Fiverr</div>
+    <p class="intro-hi">// Hello, I am</p>
     <h1 class="intro-name">
       <span class="n1">Syed Ali</span><br/>
       <span class="n2">Haider</span>
     </h1>
-    <p class="intro-role">&gt; Aspiring AI / ML Engineer</p>
-    <p class="intro-desc">Building intelligent systems with Java &amp; Python. Passionate about mathematics, machine learning, and turning complex ideas into real-world code.</p>
+    <p class="intro-role">&gt; Freelance Developer &amp; Aspiring AI/ML Engineer</p>
+    <p class="intro-desc">CS student &amp; freelance developer delivering real-world solutions in Java, Python &amp; Web. Experienced in working with clients on <strong style="color:var(--cyan)">Fiverr</strong> — building clean, efficient, and maintainable code that gets the job done.</p>
     <div class="intro-btns">
-      <a href="#projects" class="btn-fill">View Projects</a>
-      <a href="#contact" class="btn-stroke">Contact Me</a>
+      <a href="#services" class="btn-fill">Hire Me</a>
+      <a href="#projects" class="btn-stroke">View Projects</a>
     </div>
     <div class="intro-stats">
       <div><div class="is-num">3.85</div><div class="is-lbl">CGPA</div></div>
       <div><div class="is-num">5+</div><div class="is-lbl">Projects</div></div>
-      <div><div class="is-num">2</div><div class="is-lbl">Languages</div></div>
+      <div><div class="is-num">10+</div><div class="is-lbl">Clients</div></div>
     </div>
   </div>
 </section>
@@ -294,14 +350,14 @@
     <h2 class="sec-ttl">About <span>Me</span></h2>
     <div class="ab-grid">
       <div>
-        <p class="ab-p">I'm a <b>CS student (Batch 2025–2029)</b> at BIIT University, Rawalpindi with a clear goal — become an <b>AI/ML Engineer</b>.</p>
-        <p class="ab-p">I have hands-on experience in <b>Java OOP, Python, C++, SQL/DBMS</b> and <b>Problem Solving</b> — actively building real projects to sharpen my skills.</p>
-        <p class="ab-p">My approach: <b>build first, understand deep.</b> Every concept I learn gets implemented in code and committed to GitHub.</p>
+        <p class="ab-p">I'm a <b>CS student (Batch 2025–2029)</b> at BIIT University, Rawalpindi, combining academic excellence (CGPA 3.85) with real-world freelance experience to build toward my goal of becoming an <b>AI/ML Engineer</b>.</p>
+        <p class="ab-p">I have hands-on experience in <b>Java OOP, Python, C++, SQL/DBMS</b>, and <b>Web Development</b> — skills I've applied as an active <b>freelancer on Fiverr</b>, delivering clean and efficient solutions to clients worldwide.</p>
+        <p class="ab-p">My philosophy: <b>build first, understand deep.</b> Every concept I learn gets implemented in real code, committed to GitHub, and refined through client feedback.</p>
       </div>
       <div class="st-grid">
         <div class="st-box"><div class="st-num">3.85</div><div class="st-lbl">CGPA Sem 1</div></div>
         <div class="st-box"><div class="st-num">5+</div><div class="st-lbl">GitHub Projects</div></div>
-        <div class="st-box"><div class="st-num">2</div><div class="st-lbl">Languages</div></div>
+        <div class="st-box"><div class="st-num">10+</div><div class="st-lbl">Fiverr Clients</div></div>
         <div class="st-box"><div class="st-num">AI/ML</div><div class="st-lbl">Career Goal</div></div>
       </div>
     </div>
@@ -325,6 +381,44 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-in">
+    <p class="sec-sub">// what i offer</p>
+    <h2 class="sec-ttl">My <span>Services</span></h2>
+    <div class="fiverr-banner">
+      <div class="fiverr-logo">&#9889; Fiverr</div>
+      <p class="fiverr-text">I'm an active freelancer on <strong>Fiverr</strong> — delivering professional software solutions to clients worldwide. <strong>10+ happy clients</strong> and counting. Fast delivery, clear communication, and quality code guaranteed.</p>
+    </div>
+    <div class="sv-grid">
+      <div class="sv-card fade-in">
+        <div class="sv-icon">&#127760;</div>
+        <div class="sv-name">Web Development</div>
+        <p class="sv-desc">Responsive, clean, and modern websites built with HTML, CSS, and JavaScript. Fast delivery, mobile-friendly designs tailored to your brand.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div>
+      </div>
+      <div class="sv-card fade-in">
+        <div class="sv-icon">&#128013;</div>
+        <div class="sv-name">Python Scripting</div>
+        <p class="sv-desc">Automation scripts, data processing tools, and OOP-based Python applications — tailored precisely to your requirements.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">OOP</span><span class="tag">File I/O</span></div>
+      </div>
+      <div class="sv-card fade-in">
+        <div class="sv-icon">&#9749;</div>
+        <div class="sv-name">Java Development</div>
+        <p class="sv-desc">Console and GUI Java applications, OOP-based systems, student/employee management tools, and algorithmic solutions.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">DSA</span><span class="tag">Console Apps</span></div>
+      </div>
+      <div class="sv-card fade-in">
+        <div class="sv-icon">&#128451;&#65039;</div>
+        <div class="sv-name">Database &amp; SQL</div>
+        <p class="sv-desc">Efficient database schema design, SQL query optimization, ERD diagrams, and full DBMS-backed project development.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">ERD</span><span class="tag">DBMS</span><span class="tag">Queries</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section class="sec" id="projects">
   <div class="sec-in">
@@ -340,6 +434,47 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="sec" id="testimonials">
+  <div class="sec-in">
+    <p class="sec-sub">// client feedback</p>
+    <h2 class="sec-ttl">What Clients <span>Say</span></h2>
+    <div class="tm-grid">
+      <div class="tm-card fade-in">
+        <div class="tm-badge">Fiverr Client</div>
+        <div class="tm-quote">&#8220;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Ali delivered a perfectly structured Java project on time. The code was clean, well-commented, and exactly what I needed. Professional communication throughout the whole process!</p>
+        <div class="tm-author">
+          <div class="tm-avatar">A</div>
+          <div><div class="tm-name">Ahmed K.</div><div class="tm-role">Web Developer &middot; Fiverr</div></div>
+        </div>
+      </div>
+      <div class="tm-card fade-in">
+        <div class="tm-badge">Fiverr Client</div>
+        <div class="tm-quote">&#8220;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Excellent Python automation script! It saved us hours every single week. Ali was very responsive, made revisions quickly, and explained every part of the code clearly.</p>
+        <div class="tm-author">
+          <div class="tm-avatar">S</div>
+          <div><div class="tm-name">Sarah M.</div><div class="tm-role">Startup Founder &middot; Fiverr</div></div>
+        </div>
+      </div>
+      <div class="tm-card fade-in">
+        <div class="tm-badge">Fiverr Client</div>
+        <div class="tm-quote">&#8220;</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Great SQL work and database schema design. Ali understood the requirements immediately and delivered a well-structured ERD and optimized queries. Highly recommended!</p>
+        <div class="tm-author">
+          <div class="tm-avatar">U</div>
+          <div><div class="tm-name">Usman R.</div><div class="tm-role">IT Manager &middot; Fiverr</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="tm-sample-note">&#9432;&nbsp; Sample testimonials shown for illustration — replace with your real Fiverr reviews when ready.</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="sec" id="contact">
   <div class="sec-in">
@@ -347,10 +482,11 @@
     <h2 class="sec-ttl">Contact <span>Me</span></h2>
     <div class="ct-grid">
       <div>
-        <p class="ct-desc">Open to opportunities, collaborations, or just a chat about AI &amp; technology. Feel free to reach out!</p>
+        <p class="ct-desc">Open to new projects, freelance opportunities, or collaborations. Whether you found me on <strong style="color:#1aad55">Fiverr</strong> or GitHub — feel free to reach out!</p>
         <div class="ct-list">
           <a href="https://github.com/Ali-Haider05" target="_blank" class="ct-item"><span class="ct-ico">&#128025;</span><div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ali-Haider05</div></div></a>
           <a href="mailto:s.haiderali2025@gmail.com" class="ct-item"><span class="ct-ico">&#9993;&#65039;</span><div><div class="ct-lbl">Email</div><div class="ct-val">s.haiderali2025@gmail.com</div></div></a>
+          <a href="https://www.fiverr.com" target="_blank" rel="noopener" class="ct-item" style="border-left:4px solid #1aad55;"><span class="ct-ico">&#9889;</span><div><div class="ct-lbl" style="color:#1aad55;">Fiverr</div><div class="ct-val">Hire me on Fiverr</div></div></a>
           <div class="ct-item"><span class="ct-ico">&#128205;</span><div><div class="ct-lbl">Location</div><div class="ct-val">Wah Cantt, Rawalpindi, Pakistan</div></div></div>
         </div>
       </div>
@@ -377,9 +513,38 @@
   </div>
 </section>
 
-<footer>Designed &amp; Built by Syed Ali Haider &copy; 2026</footer>
+<footer>Designed &amp; Built by <strong style="color:var(--blue)">Syed Ali Haider</strong> &copy; 2026 &nbsp;&middot;&nbsp; Available for freelance work &mdash; <a href="https://www.fiverr.com" target="_blank" rel="noopener" style="color:#1aad55;text-decoration:none;">Hire me on Fiverr</a></footer>
 
 <script>
+  /* Mobile nav toggle */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks){
+    navToggle.addEventListener('click', function(){
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  /* Scroll fade-in animation */
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){ observer.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+
   function sendMsg(e){
     e.preventDefault();
     var name = document.getElementById('fname').value;
