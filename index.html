@@ -228,42 +228,12 @@
 
     footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:0.67rem;color:var(--muted);}
 
-    /* SERVICES */
-    #services{background:var(--bg2);}
-    .sv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;}
-    .sv-card{background:var(--surface);border:1px solid var(--border);padding:2rem;border-radius:12px;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;box-shadow:0 2px 10px rgba(0,0,0,0.04);}
-    .sv-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:0 10px 30px rgba(201,168,76,0.12);}
-    .sv-icon{font-size:2rem;margin-bottom:0.8rem;}
-    .sv-name{font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--text);}
-    .sv-desc{color:var(--muted);font-size:0.82rem;line-height:1.6;margin-bottom:1rem;}
-    .fiverr-banner{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;background:rgba(26,173,85,0.08);border:1px solid rgba(26,173,85,0.25);border-radius:12px;padding:1.2rem 1.8rem;margin-bottom:2rem;}
-    .fiverr-logo{display:inline-flex;align-items:center;gap:0.45rem;background:#1aad55;color:#fff;border-radius:8px;padding:0.45rem 1rem;font-family:var(--mono);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;white-space:nowrap;}
-    .fiverr-text{color:var(--muted);font-size:0.88rem;line-height:1.7;}
-    .fiverr-text strong{color:#1aad55;}
-
-
-    /* HAMBURGER */
-    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-    .nav-toggle span{display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;transition:transform 0.3s,opacity 0.3s;}
-    .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-    .nav-toggle.open span:nth-child(2){opacity:0;}
-    .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-    /* FADE-IN ON SCROLL */
-    .fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
-    .fade-in.visible{opacity:1;transform:translateY(0);}
-
     @media(max-width:850px){
       nav{padding:1rem 5%;}
-      .nav-toggle{display:flex;}
-      .nav-links{display:none;position:fixed;top:62px;left:0;right:0;flex-direction:column;gap:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0.5rem 0 1rem;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:499;}
-      .nav-links.open{display:flex;}
-      .nav-links li{width:100%;}
-      .nav-links a{display:block;padding:0.85rem 6%;font-size:0.8rem;}
+      .nav-links{display:none;}
       #hero{flex-direction:column;gap:2.5rem;padding:2rem 5% 4rem;}
       .ab-grid,.ct-grid{grid-template-columns:1fr;}
       section.sec{padding:4rem 5%;}
-      .fiverr-banner{flex-direction:column;align-items:flex-start;}
     }
   </style>
 </head>
@@ -271,17 +241,13 @@
 
 <nav>
   <div class="nav-logo">Ali.dev</div>
-  <ul class="nav-links" id="navLinks">
+  <ul class="nav-links">
     <li><a href="#welcome">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <div id="welcome">
@@ -295,28 +261,29 @@
 
   <div class="hero-pic">
     <div class="pic-outer">
-      <img id="pImg" src="ALi.jpeg" alt="Syed Ali Haider"/>
+      <img id="pImg" alt="Syed Ali Haider"/>
     </div>
     <div class="pic-badge1"><span class="live-dot"></span>&#127891; CGPA: 3.85</div>
-    <div class="pic-badge2"><span class="live-dot"></span>&#9889; Fiverr Freelancer</div>
+    <div class="pic-badge2">&#12302; AI/ML Goal</div>
   </div>
 
   <div class="hero-intro">
-    <div class="intro-chip"><span class="live-dot"></span>CS Student &middot; Freelancer on Fiverr</div>
-    <p class="intro-hi">// Hello, I am</p>
+    <div class="intro-chip"><span class="live-dot"></span>CS Student @ BIIT &middot; Batch 2025&ndash;2029</div>
+    <p class="intro-hi">// Hello World! I am</p>
     <h1 class="intro-name">
       <span class="n1">Syed Ali</span><br/>
       <span class="n2">Haider</span>
     </h1>
-    <p class="intro-role">&gt; Freelance Developer &amp; Aspiring AI/ML Engineer</p>
-    <p class="intro-desc">CS student &amp; freelance developer delivering real-world solutions in Java, Python &amp; Web. Experienced in working with clients on <strong style="color:var(--cyan)">Fiverr</strong> — building clean, efficient, and maintainable code that gets the job done.</p>
+    <p class="intro-role">&gt; Aspiring AI / ML Engineer</p>
+    <p class="intro-desc">Building intelligent systems with Java &amp; Python. Passionate about mathematics, machine learning, and turning complex ideas into real-world code.</p>
     <div class="intro-btns">
-      <a href="#services" class="btn-fill">Hire Me</a>
-      <a href="#projects" class="btn-stroke">View Projects</a>
+      <a href="#projects" class="btn-fill">View Projects</a>
+      <a href="#contact" class="btn-stroke">Contact Me</a>
     </div>
     <div class="intro-stats">
       <div><div class="is-num">3.85</div><div class="is-lbl">CGPA</div></div>
       <div><div class="is-num">6+</div><div class="is-lbl">Projects</div></div>
+      <div><div class="is-num">2</div><div class="is-lbl">Languages</div></div>
     </div>
   </div>
 </section>
@@ -327,13 +294,14 @@
     <h2 class="sec-ttl">About <span>Me</span></h2>
     <div class="ab-grid">
       <div>
-        <p class="ab-p">I'm a <b>CS student (Batch 2025–2029)</b> at BIIT University, Rawalpindi, combining academic excellence (CGPA 3.85) with real-world freelance experience to build toward my goal of becoming an <b>AI/ML Engineer</b>.</p>
-        <p class="ab-p">I have hands-on experience in <b>Java OOP, Python, C++, SQL/DBMS</b>, and <b>Web Development</b> — skills I've applied as an active <b>freelancer on Fiverr</b>, delivering clean and efficient solutions to clients worldwide.</p>
-        <p class="ab-p">My philosophy: <b>build first, understand deep.</b> Every concept I learn gets implemented in real code, committed to GitHub, and refined through client feedback.</p>
+        <p class="ab-p">I'm a <b>CS student (Batch 2025–2029)</b> at BIIT University, Rawalpindi with a clear goal — become an <b>AI/ML Engineer</b>.</p>
+        <p class="ab-p">I have hands-on experience in <b>Java OOP, Python, C++, SQL/DBMS</b> and <b>Problem Solving</b> — actively building real projects to sharpen my skills.</p>
+        <p class="ab-p">My approach: <b>build first, understand deep.</b> Every concept I learn gets implemented in code and committed to GitHub.</p>
       </div>
       <div class="st-grid">
         <div class="st-box"><div class="st-num">3.85</div><div class="st-lbl">CGPA Sem 1</div></div>
         <div class="st-box"><div class="st-num">6+</div><div class="st-lbl">GitHub Projects</div></div>
+        <div class="st-box"><div class="st-num">2</div><div class="st-lbl">Languages</div></div>
         <div class="st-box"><div class="st-num">AI/ML</div><div class="st-lbl">Career Goal</div></div>
       </div>
     </div>
@@ -356,43 +324,6 @@
   </div>
 </section>
 
-<section class="sec" id="services">
-  <div class="sec-in">
-    <p class="sec-sub">// what i offer</p>
-    <h2 class="sec-ttl">My <span>Services</span></h2>
-    <div class="fiverr-banner">
-      <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" class="fiverr-logo" style="text-decoration:none;">&#9889; Fiverr</a>
-      <p class="fiverr-text">I'm an active freelancer on <strong>Fiverr</strong> — delivering professional software solutions to clients worldwide. Fast delivery, clear communication, and quality code guaranteed.</p>
-    </div>
-    <div class="sv-grid">
-      <div class="sv-card fade-in">
-        <div class="sv-icon">&#127760;</div>
-        <div class="sv-name">Web Development</div>
-        <p class="sv-desc">Responsive, clean, and modern websites built with HTML, CSS, and JavaScript. Fast delivery, mobile-friendly designs tailored to your brand.</p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Responsive</span></div>
-      </div>
-      <div class="sv-card fade-in">
-        <div class="sv-icon">&#128013;</div>
-        <div class="sv-name">Python Scripting</div>
-        <p class="sv-desc">Automation scripts, data processing tools, and OOP-based Python applications — tailored precisely to your requirements.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">OOP</span><span class="tag">File I/O</span></div>
-      </div>
-      <div class="sv-card fade-in">
-        <div class="sv-icon">&#9749;</div>
-        <div class="sv-name">Java Development</div>
-        <p class="sv-desc">Console and GUI Java applications, OOP-based systems, student/employee management tools, and algorithmic solutions.</p>
-        <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">DSA</span><span class="tag">Console Apps</span></div>
-      </div>
-      <div class="sv-card fade-in">
-        <div class="sv-icon">&#128451;&#65039;</div>
-        <div class="sv-name">Database &amp; SQL</div>
-        <p class="sv-desc">Efficient database schema design, SQL query optimization, ERD diagrams, and full DBMS-backed project development.</p>
-        <div class="tags"><span class="tag">SQL</span><span class="tag">ERD</span><span class="tag">DBMS</span><span class="tag">Queries</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" id="projects">
   <div class="sec-in">
     <p class="sec-sub">// what i built</p>
@@ -401,7 +332,7 @@
       <div class="pj-card"><div class="pj-num">01 &mdash; Web Handle</div><div class="pj-title">ToolZap Platform</div><p class="pj-desc">A privacy-focused web utilities platform built for lightning-fast local document and image processing. Fully open-source and client-side safe.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Client-side</span></div><a href="https://toolzap.me" target="_blank" class="pj-link">Live ToolZap &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">02 &mdash; Java</div><div class="pj-title">Console Projects</div><p class="pj-desc">Java console apps — Student Management System, Number Guessing Game with difficulty levels and lives system.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Arrays</span></div><a href="https://github.com/Ali-Haider05/MyJavaProject" target="_blank" class="pj-link">GitHub &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">03 &mdash; Python</div><div class="pj-title">Python SMS Project</div><p class="pj-desc">Final project of Python course — Student Management System with OOP and file handling.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">Python</span><span class="tag">OOP</span><span class="tag">File I/O</span></div><a href="https://github.com/Ali-Haider05/python-sms" target="_blank" class="pj-link">GitHub &rarr;</a></div>
-      <div class="pj-card"><div class="pj-num">04 &mdash; DLD</div><div class="pj-title">Fire Detection &amp; Extinguishing Robot</div><p class="pj-desc">A Fire Detection &amp; Extinguishing Robot that detects fire using LM35 temperature sensor and IR flame sensor, and automatically activates a water pump via relay — built using Arduino Uno and combinational circuit logic.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">DLD</span><span class="tag">Circuits</span><span class="tag">Hardware</span></div><a href="https://github.com/Ali-Haider05/DLD-Project" target="_blank" class="pj-link">GitHub &rarr;</a></div>
+      <div class="pj-card"><div class="pj-num">04 &mdash; DLD</div><div class="pj-title">Bridge Car (Robot Car)</div><p class="pj-desc">A robot car that detects water and automatically sprays it — built using Digital Logic Design components and combinational circuits.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">DLD</span><span class="tag">Circuits</span><span class="tag">Hardware</span></div><a href="https://github.com/Ali-Haider05" target="_blank" class="pj-link">GitHub &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">05 &mdash; Web</div><div class="pj-title">Portfolio Website</div><p class="pj-desc">Personal portfolio built with HTML/CSS showcasing projects and skills.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div><a href="https://github.com/Ali-Haider05/portfolio" target="_blank" class="pj-link">GitHub &rarr;</a></div>
       <div class="pj-card"><div class="pj-num">06 &mdash; C++</div><div class="pj-title">Console Games</div><p class="pj-desc">Console games built in C++ during 1st semester Programming Fundamentals course.</p><div class="tags" style="margin-bottom:1rem"><span class="tag">C++</span><span class="tag">Console</span><span class="tag">Logic</span></div><a href="https://github.com/Ali-Haider05/c-game" target="_blank" class="pj-link">GitHub &rarr;</a></div>
     </div>
@@ -414,11 +345,10 @@
     <h2 class="sec-ttl">Contact <span>Me</span></h2>
     <div class="ct-grid">
       <div>
-        <p class="ct-desc">Open to new projects, freelance opportunities, or collaborations. Whether you found me on <strong style="color:#1aad55">Fiverr</strong> or GitHub — feel free to reach out!</p>
+        <p class="ct-desc">Open to opportunities, collaborations, or just a chat about AI &amp; technology. Feel free to reach out!</p>
         <div class="ct-list">
           <a href="https://github.com/Ali-Haider05" target="_blank" class="ct-item"><span class="ct-ico">&#128025;</span><div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ali-Haider05</div></div></a>
           <a href="mailto:s.haiderali2025@gmail.com" class="ct-item"><span class="ct-ico">&#9993;&#65039;</span><div><div class="ct-lbl">Email</div><div class="ct-val">s.haiderali2025@gmail.com</div></div></a>
-          <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" class="ct-item" style="border-left:4px solid #1aad55;"><span class="ct-ico">&#9889;</span><div><div class="ct-lbl" style="color:#1aad55;">Fiverr</div><div class="ct-val">Hire me on Fiverr</div></div></a>
           <div class="ct-item"><span class="ct-ico">&#128205;</span><div><div class="ct-lbl">Location</div><div class="ct-val">Wah Cantt, Rawalpindi, Pakistan</div></div></div>
         </div>
       </div>
@@ -445,38 +375,9 @@
   </div>
 </section>
 
-<footer>Designed &amp; Built by <strong style="color:var(--blue)">Syed Ali Haider</strong> &copy; 2026 &nbsp;&middot;&nbsp; Available for freelance work &mdash; <a href="https://www.fiverr.com/alihaider_code" target="_blank" rel="noopener" style="color:#1aad55;text-decoration:none;">Hire me on Fiverr</a></footer>
+<footer>Designed &amp; Built by Syed Ali Haider &copy; 2026</footer>
 
 <script>
-  /* Mobile nav toggle */
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navLinks');
-  if(navToggle && navLinks){
-    navToggle.addEventListener('click', function(){
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', function(){
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-  }
-
-  /* Scroll fade-in animation */
-  var fadeEls = document.querySelectorAll('.fade-in');
-  if('IntersectionObserver' in window){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    },{threshold:0.12});
-    fadeEls.forEach(function(el){ observer.observe(el); });
-  } else {
-    fadeEls.forEach(function(el){ el.classList.add('visible'); });
-  }
-
   function sendMsg(e){
     e.preventDefault();
     var name = document.getElementById('fname').value;
@@ -490,8 +391,4 @@
 
   window.addEventListener('load', function(){
     var img = document.getElementById('pImg');
-    if(img){ img.src = 'ALi.jpeg'; }
-  });
-</script>
-</body>
-</html>
+    if(img){ img.src = 'data:image/jpeg;base64,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 VisneesUmsVisViYrFYrFYrFYpE0iNaxWtIrSsVpFrVrWkWtWkWmK1rFazaYmK1pE0isaTSaxasxWK1rFrVrEVisUrWsVmsUrM1pFrVrSKRms0itYilpisaTSK0isZzSZms1mKzWKxWKxWKxSIxmsVmsVisVisUisTSKxmsUrNZisVis0isVisVisVisVitKzWKzWKzWKTWKVmtYisVisVisVisVitYrNYrNYrWazWIrNaREVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVisVui lòng đọc kĩ file "HƯỚNG DẪN KÍCH HOẠT BẢO HÀNH ĐIỆN TỬ" đính kèm bên dưới ảnh đại diện sản phẩm trước khi mua hàng. THÔNG SỐ KỸ THUẬT Công suất (W): 1200 Phụ kiện đi kèm: Dây hút nước 1,5m, súng cao áp, dây cao áp 6m, bình xà phòng, cút lọc nước, kim vệ sinh đầu phun Điện áp: 220V/50Hz Trọng lượng: 5.5kg ĐẶC ĐIỂM NỔI BẬT Thiết kế gọn gàng Thiết kế dáng xách tay nhỏ gọn, dễ dàng cất giữ hay mang theo. Thân vỏ máy làm bằng nhựa cao cấp, cách điện, cách nhiệt tốt, độ bền cao. Ứng dụng rộng rãi xịt rửa xe máy, ô tô, sân vườn, chuồng trại, tường rào, tưới cây, vệ sinh vật dụng bám bẩn… Máy rửa xe gia đình Kangaroo KG1200G là công cụ hỗ trợ người dùng tối đa cho các công việc phun xịt rửa bụi bẩn, chất bám bẩn lâu ngày, vệ sinh sân vườn, chuồng trại hay các phương tiện di chuyển như xe máy, ô tô, một cách nhanh chóng và hiệu quả. Thiết kế thông minh – Gọn gàng – Tiện lợi Máy rửa xe gia đình Kangaroo KG1200G mang một kiểu dáng vô cùng gọn gàng và tiện lợi với thiết kế xách tay giúp người dùng dễ dàng mang theo tới mọi vị trí xịt rửa hoặc cất giữ mà không lo tốn diện tích không gian gia đình. Thiết kế dáng xách tay nhỏ gọn, dễ dàng cất giữ hay mang theo. Vỏ máy làm bằng nhựa cao cấp, có khả năng cách điện, cách nhiệt tốt mang lại độ bền cao cho sản phẩm trong suốt quá trình sử dụng lâu dài, và dễ dàng lau chùi, vệ sinh sau mỗi lần phun rửa. Mô tơ chổi than, rơ-le tự ngắt khi nhả cò súng Máy sử dụng mô tơ chổi than giúp máy có trọng lượng nhẹ (chỉ khoảng 5.5 kg), dễ dàng di chuyển, mang lại khả năng hoạt động tốt cho các nhu cầu xịt rửa cơ bản trong gia đình. Cùng với tính năng rơ-le tự ngắt khi nhả cò súng vô cùng tiện lợi, người dùng có thể nhấp nhả cò súng để xịt rửa liên tục theo mong muốn mà không lo tốn quá nhiều lượng nước, tiết kiệm tối đa chi phí tiền nước cho gia đình bạn. Đa năng sử dụng cho mọi nhu cầu rửa dọn Công suất hoạt động mạnh mẽ đến 1200W cùng áp lực tối đa 90 bar cho ra các tia nước phun xịt mạnh dạn, dễ dàng bóc tách các mảng bám bẩn, bùn đất khô bám trên xe máy, xe ô tô, rêu mốc bám trên tường rào, sân vườn hay các dụng cụ, đồ dùng làm vườn một cách nhanh chóng nhất. Ứng dụng rộng rãi xịt rửa xe máy, ô tô, sân vườn, chuồng trại, tường rào, tưới cây, vệ sinh vật dụng bám bẩn… Phụ kiện đầy đủ, kết nối nhanh chóng và dễ dàng Đi kèm với sản phẩm, Kangaroo cung cấp tới người dùng bộ phụ kiện đầy đủ bao gồm: dây hút nước 1.5m, súng cao áp, dây cao áp 6m, bình xà phòng, cút lọc nước và kim vệ sinh đầu phun. Giúp người dùng lắp đặt nhanh chóng chỉ qua vài bước thao tác đơn giản và sử dụng ngay lập tức mà không cần mua sắm thêm bất kỳ phụ kiện nào bên ngoài. Lưu ý khi sử dụng máy phun xịt rửa áp lực cao: Thường xuyên kiểm tra nguồn nước, đảm bảo nguồn nước sạch không có cặn bẩn để máy hoạt động trơn tru và bền bỉ hơn. Sau khi ngưng sử dụng, tắt công tắc máy sau đó bóp cò súng để xả hết áp lực nước còn lại trong dây cao áp và trong máy rồi mới rút dây nguồn điện, giúp bảo vệ các chi tiết gioăng phớt bên trong sản phẩm. Vệ sinh sạch sẽ, cuộn gọn dây và súng xịt, cất giữ nơi khô ráo, tránh ánh nắng trực tiếp từ mặt trời và tầm tay của trẻ em.
