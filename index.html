@@ -140,6 +140,7 @@
   .sec-tag{font-family:var(--mono);font-size:13px;color:var(--accent);display:block;margin-bottom:12px}
   .sec-title{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.01em}
   .sec-title::after{content:".";color:var(--accent)}
+  .sec-sub{color:var(--muted);font-size:15px;max-width:560px;margin-top:12px}
 
   /* reveal animation */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
@@ -160,57 +161,89 @@
   .info-row span:first-child{color:var(--muted)}
   .info-row span:last-child{font-weight:600;text-align:right}
 
-  /* ---------- skills ---------- */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-  .skill-card{
+  /* ---------- skills (professional) ---------- */
+  .skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  .skill-group{
     border:1px solid var(--border);border-radius:16px;background:var(--bg-soft);
-    padding:26px;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+    padding:28px 28px 22px;transition:border-color .25s ease;
   }
-  .skill-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.35);box-shadow:0 16px 40px rgba(0,0,0,.35)}
-  .skill-top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-  .skill-icon{
-    width:44px;height:44px;border-radius:11px;display:grid;place-items:center;flex:none;
-    background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.22);
-    font-family:var(--mono);font-weight:700;font-size:15px;color:var(--accent);
+  .skill-group:hover{border-color:rgba(34,211,238,.3)}
+  .skill-group h3{
+    font-family:var(--mono);font-size:13px;color:var(--accent);
+    margin-bottom:24px;display:flex;align-items:center;gap:10px;font-weight:500;
   }
-  .skill-card h4{font-size:16.5px;font-weight:700}
-  .skill-card p{font-size:13.5px;color:var(--muted);margin-bottom:16px}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{
-    font-family:var(--mono);font-size:11.5px;color:var(--muted);
-    border:1px solid var(--border);border-radius:999px;padding:4px 11px;
+  .skill-group h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent);flex:none}
+  .skill-item{margin-bottom:20px}
+  .skill-item:last-child{margin-bottom:6px}
+  .skill-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .skill-meta .name{font-size:14.5px;font-weight:600}
+  .skill-meta .name small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:1px}
+  .skill-meta .pct{font-family:var(--mono);font-size:12.5px;color:var(--accent)}
+  .skill-track{height:6px;border-radius:99px;background:rgba(148,163,184,.12);overflow:hidden}
+  .skill-fill{
+    height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    transition:width 1.15s cubic-bezier(.22,.61,.36,1) .15s;
   }
-  .skill-card:hover .chip{border-color:rgba(148,163,184,.3);color:var(--text)}
+  .reveal.visible .skill-fill{width:var(--w)}
+  .tools-strip{
+    margin-top:22px;border:1px dashed var(--border);border-radius:14px;
+    padding:20px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  }
+  .tools-strip .ts-label{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-right:4px}
+  .tool-chip{
+    font-family:var(--mono);font-size:12px;color:var(--muted);
+    border:1px solid var(--border);border-radius:999px;padding:5px 13px;
+    transition:color .2s ease,border-color .2s ease;
+  }
+  .tool-chip:hover{color:var(--text);border-color:rgba(34,211,238,.4)}
 
-  /* ---------- projects ---------- */
-  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  /* ---------- projects (professional) ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
   .proj-card{
-    position:relative;border:1px solid var(--border);border-radius:16px;background:var(--bg-soft);
-    padding:28px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
-    transition:transform .25s ease,border-color .25s ease;
+    position:relative;display:flex;flex-direction:column;gap:13px;
+    border:1px solid var(--border);border-radius:16px;background:var(--bg-soft);
+    padding:28px;overflow:hidden;
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
   }
   .proj-card::before{
     content:"";position:absolute;inset:0 0 auto 0;height:2px;
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
     opacity:0;transition:opacity .25s ease;
   }
-  .proj-card:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.3)}
+  .proj-card:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.3);box-shadow:0 18px 44px rgba(0,0,0,.4)}
   .proj-card:hover::before{opacity:1}
+  .proj-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .proj-num{font-family:var(--mono);font-size:13px;color:var(--accent);opacity:.85}
-  .proj-cat{
-    position:absolute;top:24px;right:24px;font-family:var(--mono);font-size:10.5px;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--accent-2);
-    border:1px solid rgba(52,211,153,.3);border-radius:999px;padding:3px 10px;
-    background:rgba(52,211,153,.07);
+  .proj-badge{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent-2);border:1px solid rgba(52,211,153,.3);border-radius:999px;
+    padding:3px 10px;background:rgba(52,211,153,.07);
   }
-  .proj-card h4{font-size:18px;font-weight:700;margin-top:4px}
+  .proj-card h4{font-size:18px;font-weight:700;letter-spacing:-.01em}
   .proj-card>p{font-size:14px;color:var(--muted);flex:1}
-  .proj-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
-  .proj-link{
-    font-family:var(--mono);font-size:13px;color:var(--accent);display:inline-flex;align-items:center;gap:6px;
+  .proj-card .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    border:1px solid var(--border);border-radius:999px;padding:4px 11px;
   }
-  .proj-link svg{transition:transform .2s ease}
-  .proj-card:hover .proj-link svg{transform:translate(3px,-3px)}
+  .proj-actions{display:flex;gap:10px;margin-top:6px;padding-top:16px;border-top:1px dashed var(--border)}
+  .proj-btn{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--mono);font-size:12.5px;padding:8px 15px;border-radius:8px;
+    transition:background .2s ease,border-color .2s ease,color .2s ease;
+  }
+  .proj-btn svg{transition:transform .2s ease}
+  .proj-btn:hover svg{transform:translate(2px,-2px)}
+  .proj-btn-solid{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.35);color:var(--accent)}
+  .proj-btn-solid:hover{background:rgba(34,211,238,.18)}
+  .proj-btn-ghost{border:1px solid var(--border);color:var(--muted)}
+  .proj-btn-ghost:hover{color:var(--text);border-color:rgba(148,163,184,.35)}
+  .proj-note{
+    text-align:center;margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--muted);
+  }
+  .proj-note a{color:var(--accent)}
+  .proj-note a:hover{text-decoration:underline}
 
   /* ---------- contact ---------- */
   .contact-box{
@@ -237,6 +270,7 @@
     .avatar-ring{width:min(230px,60vw)}
     .badge-1{left:-8px}.badge-2{right:-8px}
     .about-grid{grid-template-columns:1fr}
+    .skills-layout{grid-template-columns:1fr}
     .nav-links{
       position:fixed;top:66px;right:0;flex-direction:column;align-items:flex-start;gap:0;
       background:var(--bg-soft);border:1px solid var(--border);border-right:0;border-radius:0 0 0 14px;
@@ -292,7 +326,7 @@
       </div>
       <div class="stats">
         <div class="stat"><b><em>3.85</em></b><span>CGPA</span></div>
-        <div class="stat"><b><em>5+</em></b><span>Projects</span></div>
+        <div class="stat"><b><em>10+</em></b><span>Projects</span></div>
         <div class="stat"><b><em>5</em></b><span>Languages</span></div>
         <div class="stat"><b><em>AI/ML</em></b><span>Goal</span></div>
       </div>
@@ -340,50 +374,63 @@
 <section id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">// what i know</span>
-      <h2 class="sec-title">My skills</h2>
+      <span class="sec-tag">// technical expertise</span>
+      <h2 class="sec-title">Skills &amp; Technologies</h2>
+      <p class="sec-sub">A snapshot of what I work with daily — from building backend logic in Java &amp; Python to designing clean, responsive web interfaces.</p>
     </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">Jv</div><h4>Java</h4></div>
-        <p>OOP, arrays, file handling, data structures basics.</p>
-        <div class="chips"><span class="chip">OOP</span><span class="chip">Arrays</span><span class="chip">File I/O</span><span class="chip">DSA</span></div>
+
+    <div class="skills-layout">
+      <div class="skill-group reveal">
+        <h3>Programming Languages</h3>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">Java<small>OOP · Collections · File I/O · DSA</small></span><span class="pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">Python<small>Scripting · Automation · OOP · File handling</small></span><span class="pct">80%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">C++<small>Fundamentals · Console apps · Game logic</small></span><span class="pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:70%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">JavaScript<small>DOM · Interactivity · ES6 basics</small></span><span class="pct">65%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:65%"></div></div>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">Py</div><h4>Python</h4></div>
-        <p>Full course completed — OOP, file handling, projects.</p>
-        <div class="chips"><span class="chip">Functions</span><span class="chip">OOP</span><span class="chip">Lists</span><span class="chip">Files</span></div>
+
+      <div class="skill-group reveal">
+        <h3>Web, Data &amp; Tools</h3>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">HTML / CSS<small>Responsive design · Layouts · Animations</small></span><span class="pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">SQL / DBMS<small>Queries · ERD design · Normalization · JDBC</small></span><span class="pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:75%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">Git &amp; GitHub<small>Version control · CI basics · GitHub Pages</small></span><span class="pct">80%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="name">Problem Solving<small>Algorithms · Debugging · Logical thinking</small></span><span class="pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="--w:85%"></div></div>
+        </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">C+</div><h4>C++</h4></div>
-        <p>Programming fundamentals, console applications &amp; games.</p>
-        <div class="chips"><span class="chip">Basics</span><span class="chip">Functions</span><span class="chip">Loops</span><span class="chip">Games</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">&lt;/&gt;</div><h4>Web design</h4></div>
-        <p>Clean, modern, responsive websites built from scratch.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Responsive</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">SQL</div><h4>SQL / DBMS</h4></div>
-        <p>SQL queries, ERD design, database fundamentals.</p>
-        <div class="chips"><span class="chip">SQL</span><span class="chip">ERD</span><span class="chip">DBMS</span><span class="chip">Queries</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">Ai</div><h4>ML &amp; AI — learning</h4></div>
-        <p>Currently studying machine learning &amp; AI foundations.</p>
-        <div class="chips"><span class="chip">Math</span><span class="chip">ML basics</span><span class="chip">Problem solving</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">Git</div><h4>Git &amp; GitHub</h4></div>
-        <p>Version control, repositories, project management.</p>
-        <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Version control</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-top"><div class="skill-icon">Ps</div><h4>Problem solving</h4></div>
-        <p>Logical thinking, algorithmic approach, debugging skills.</p>
-        <div class="chips"><span class="chip">Logic</span><span class="chip">Algorithms</span><span class="chip">Debugging</span></div>
-      </div>
+    </div>
+
+    <div class="tools-strip reveal">
+      <span class="ts-label">Also working with:</span>
+      <span class="tool-chip">Machine Learning (learning)</span>
+      <span class="tool-chip">Scikit-learn</span>
+      <span class="tool-chip">Pandas</span>
+      <span class="tool-chip">NumPy</span>
+      <span class="tool-chip">SQL Server</span>
+      <span class="tool-chip">Proteus / ModelSim</span>
+      <span class="tool-chip">Verilog</span>
+      <span class="tool-chip">Fiverr Freelancing</span>
     </div>
   </div>
 </section>
@@ -392,71 +439,90 @@
 <section id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">// what i built</span>
-      <h2 class="sec-title">My projects</h2>
+      <span class="sec-tag">// selected work</span>
+      <h2 class="sec-title">Featured Projects</h2>
+      <p class="sec-sub">Real projects, shipped and maintained on GitHub — from full Java applications with databases to a live, privacy-first web platform.</p>
     </div>
+
     <div class="proj-grid">
+      <!-- 1. ToolZap — flagship -->
       <div class="proj-card reveal">
-        <span class="proj-num">01</span><span class="proj-cat">Java</span>
-        <h4>Java console projects</h4>
-        <p>Student Management System, Number Guessing Game with difficulty levels and a lives system.</p>
-        <div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Arrays</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">01</span><span class="proj-badge">★ Featured · Live</span></div>
+        <h4>ToolZap — Web Utilities Platform</h4>
+        <p>A privacy-first, serverless file utility suite: Word→PDF conversion, text extraction, merge/split engines, batch image optimization and format conversion — 100% client-side, zero server footprint.</p>
+        <div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">Serverless</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-solid" href="https://alihaiderdev.me/toolzap" target="_blank" rel="noopener">Live demo
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/toolzap" target="_blank" rel="noopener">Code
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+      <!-- 2. Hospital Management System -->
       <div class="proj-card reveal">
-        <span class="proj-num">02</span><span class="proj-cat">Python</span>
-        <h4>Python SMS project</h4>
-        <p>Final project of my Python course — a Student Management System built with OOP and file handling.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">OOP</span><span class="chip">File I/O</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">02</span><span class="proj-badge">Java · OOP</span></div>
+        <h4>Hospital Management System</h4>
+        <p>A console-based management system built with core OOP principles — encapsulating patient records, doctor assignments and appointment workflows in a clean, maintainable class structure.</p>
+        <div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">File I/O</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/Hospital-Management-System-" target="_blank" rel="noopener">View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+      <!-- 3. Flight Reservation System -->
       <div class="proj-card reveal">
-        <span class="proj-num">03</span><span class="proj-cat">DLD</span>
-        <h4>Bridge car (robot car)</h4>
-        <p>A robot car that detects water and automatically sprays it — built with Digital Logic Design components and combinational circuits.</p>
-        <div class="chips"><span class="chip">DLD</span><span class="chip">Circuits</span><span class="chip">Hardware</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">03</span><span class="proj-badge">Java · SQL</span></div>
+        <h4>Flight Reservation System</h4>
+        <p>End-to-end reservation system backed by a designed database — complete with ERD &amp; EERD modeling, normalized schema and CRUD operations connecting Java to the database via JDBC.</p>
+        <div class="chips"><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">ERD / EERD</span><span class="chip">JDBC</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/Flight-Reservation-System" target="_blank" rel="noopener">View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/ERD-and-EERD-of-Flight-reservation-syatem-" target="_blank" rel="noopener">DB design
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+      <!-- 4. Reddit Lead Finder -->
       <div class="proj-card reveal">
-        <span class="proj-num">04</span><span class="proj-cat">Web</span>
-        <h4>Portfolio website</h4>
-        <p>Personal portfolio built with HTML/CSS showcasing projects and skills — the site you're looking at now.</p>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">04</span><span class="proj-badge">Python · Automation</span></div>
+        <h4>Reddit Lead Finder</h4>
+        <p>A Python automation tool that scans Reddit for high-intent leads matching target keywords — collecting and structuring prospects to supercharge freelance client outreach.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">APIs</span><span class="chip">Automation</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/ali-reddit-lead-finder" target="_blank" rel="noopener">View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+      <!-- 5. C++ games -->
       <div class="proj-card reveal">
-        <span class="proj-num">05</span><span class="proj-cat">C++</span>
-        <h4>C++ console games</h4>
-        <p>Console games built in C++ during my 1st semester Programming Fundamentals course.</p>
-        <div class="chips"><span class="chip">C++</span><span class="chip">Console</span><span class="chip">Logic</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">05</span><span class="proj-badge">C++</span></div>
+        <h4>C++ Console Games</h4>
+        <p>My first shipped project — interactive console games built from scratch with C++ fundamentals: control flow, functions, randomization and clean game-loop logic.</p>
+        <div class="chips"><span class="chip">C++</span><span class="chip">Game logic</span><span class="chip">Console</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/c-game" target="_blank" rel="noopener">View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
+
+      <!-- 6. OOP in Java -->
       <div class="proj-card reveal">
-        <span class="proj-num">06</span><span class="proj-cat">Next</span>
-        <h4>Your next project?</h4>
-        <p>I'm always building something new — follow my GitHub to see what I ship next as I dive into ML &amp; AI.</p>
-        <div class="chips"><span class="chip">ML</span><span class="chip">AI</span><span class="chip">Web</span></div>
-        <div class="proj-foot">
-          <a class="proj-link" href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">Follow
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="proj-top"><span class="proj-num">06</span><span class="proj-badge">Java · OOP</span></div>
+        <h4>OOP Concepts in Java</h4>
+        <p>A structured deep-dive into object-oriented programming — inheritance, polymorphism, abstraction and interfaces — applied through university-level system designs like a University Management System.</p>
+        <div class="chips"><span class="chip">Java</span><span class="chip">Inheritance</span><span class="chip">Interfaces</span><span class="chip">Polymorphism</span></div>
+        <div class="proj-actions">
+          <a class="proj-btn proj-btn-ghost" href="https://github.com/Ali-Haider05/OOP-Concepet-in-JAVA" target="_blank" rel="noopener">View on GitHub
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
+
+    <p class="proj-note reveal">More experiments &amp; code on my <a href="https://github.com/Ali-Haider05" target="_blank" rel="noopener">GitHub profile →</a></p>
   </div>
 </section>
 
@@ -513,7 +579,7 @@
     a.addEventListener("click", function(){ links.classList.remove("open"); });
   });
 
-  /* ---------- scroll reveal ---------- */
+  /* ---------- scroll reveal (also animates skill bars) ---------- */
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); }
